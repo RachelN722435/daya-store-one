@@ -1,60 +1,32 @@
 "use client"
-import { useState } from "react"
-
-const bodyTypes = ['Hourglass','Pear','Apple','Rectangle','Inverted Triangle','Petite','Tall','Athletic','Curvy','Plus Size','Busty','Slim','Straight','Balanced','Full Hips']
-const occasions = ['Work','Date Night','Party','Casual Day','Wedding Guest','Travel','Brunch','Evening Out','Weekend']
-
-export default function Page() {
-  const [body, setBody] = useState<string | null>(null)
-  const [occasion, setOccasion] = useState<string | null>(null)
-
+export default function DayaHome() {
   return (
-    <div style={{fontFamily:'system-ui', background:'#faf9f6', minHeight:'100vh'}}>
-      <div style={{padding:24, fontWeight:800, display:'flex', justifyContent:'space-between', borderBottom:'1px solid #eee'}}>
-        <span onClick={()=>{setBody(null); setOccasion(null)}} style={{cursor:'pointer'}}>DAYA STORE</span>
-        <span>Cart (0)</span>
+    <div className="min-h-screen bg-[#faf9f6] text-black">
+      <header className="flex justify-between p-6 text-xs tracking-widest">
+        <span className="font-bold">DAYA STYLE</span>
+        <span>LAGOS - EST 2025</span>
+      </header>
+
+      <div className="grid md:grid-cols-3 gap-4 px-6">
+        <div className="relative rounded-2xl overflow-hidden h-[500px]">
+          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600" className="w-full h-full object-cover" />
+          <span className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full text-xs">EVENING GOWNS</span>
+        </div>
+        <div className="relative rounded-2xl overflow-hidden h-[500px]">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600" className="w-full h-full object-cover" />
+          <span className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full text-xs">BEACHWEAR</span>
+        </div>
+        <div className="relative rounded-2xl overflow-hidden h-[500px]">
+          <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=600" className="w-full h-full object-cover" />
+          <span className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-full text-xs">PARTY READY</span>
+        </div>
       </div>
 
-      {!body ? (
-        <>
-          <div style={{background:'black', color:'white', padding:'60px 24px', borderRadius:'0 0 40px 40px'}}>
-            <h1 style={{fontSize:'14vw', lineHeight:0.85, margin:0, fontWeight:900}}>STYLE<br/>FIT<br/>GORGEOUS</h1>
-            <p style={{marginTop:20, opacity:0.6}}>Choose your body type below</p>
-          </div>
-          <div style={{padding:24}}>
-            <h2 style={{fontWeight:800, fontSize:20}}>Choose Your Body Type - 15 Types</h2>
-            <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginTop:16}}>
-              {bodyTypes.map(t=>(
-                <button key={t} onClick={()=>setBody(t)} style={{aspectRatio:'3/4', borderRadius:20, background:'white', border:'1px solid #ddd', fontWeight:700, cursor:'pointer', fontSize:16}}>
-                  {t}
-                </button>
-              ))}
-            </div>
-          </div>
-        </>
-      ) : !occasion ? (
-        <div style={{padding:24}}>
-          <button onClick={()=>setBody(null)} style={{marginBottom:16, background:'none', border:'none', fontWeight:700, cursor:'pointer'}}>← Back</button>
-          <h2 style={{fontWeight:900, fontSize:24}}>{body}</h2>
-          <p>Now choose an occasion - 9 options</p>
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginTop:16}}>
-            {occasions.map(o=>(
-              <button key={o} onClick={()=>setOccasion(o)} style={{padding:24, borderRadius:20, background:'black', color:'white', fontWeight:700, cursor:'pointer', fontSize:16}}>
-                {o}
-              </button>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div style={{padding:24}}>
-          <button onClick={()=>setOccasion(null)} style={{marginBottom:16, background:'none', border:'none', fontWeight:700, cursor:'pointer'}}>← Back to occasions</button>
-          <h2 style={{fontWeight:900, fontSize:28}}>{body} × {occasion}</h2>
-          <p style={{opacity:0.6}}>Showing outfits for {body} body type for {occasion} — ready to add products next.</p>
-          <div style={{marginTop:24, padding:24, borderRadius:20, background:'white', border:'1px solid #eee', textAlign:'center'}}>
-            Outfits will appear here
-          </div>
-        </div>
-      )}
+      <div className="px-6 py-16 max-w-4xl">
+        <h1 className="text-5xl font-serif leading-tight">Every body is <br/><i className="font-light">Daya body.</i></h1>
+        <p className="mt-4 text-sm text-gray-600 max-w-md">Gowns, beachwear, date looks, modest dresses, tailoring and more. We style every woman, every shape, every size.</p>
+        <a href="/calculator" className="inline-block mt-8 bg-black text-white px-8 py-4 rounded-full text-sm">Find My Daya Fit →</a>
+      </div>
     </div>
   )
 }
