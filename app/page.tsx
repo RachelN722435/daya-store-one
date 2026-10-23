@@ -407,7 +407,7 @@ export default function DayaHome() {
               Explore the size guide ↗
             </a>
             <p className="mt-4 text-xs leading-5 text-[#526451]">
-              Sizes vary by brand. Always check the retailer's own chart.
+              Sizes vary by brand. Always check the retailer&apos;s own chart.
             </p>
           </div>
 
@@ -554,7 +554,7 @@ export default function DayaHome() {
               ) : (
                 <div className="rounded-2xl border border-dashed border-[#D8C5BC] bg-[#FFF9F5] p-10 text-center">
                   <h3 className="font-serif text-xl">
-                    We're still curating this edit.
+                    We&apos;re still curating this edit.
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-[#766965]">
                     Try adjusting your filters to discover other looks.
